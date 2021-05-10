@@ -34,9 +34,9 @@ Esta pagina corresponde a una web para calcular el area de figuras geometricas
 - [X] El repositorio no debe contener archivos innecesarios (no debe contener .idea o .vsc, en todo caso emplear **.gitignore**)
 
 Accesibilidad:
-- [ ] Toda imagen debe tener su etiqueta alt
-- [ ] Todo ```<input>``` o ```<select>``` debe tener su ```<label>```
-- [ ] Los labels deben contener el atributo **for** (el for debe contener el id del input al cual se referencia) 
+- [X] Toda imagen debe tener su etiqueta alt
+- [X] Todo ```<input>``` o ```<select>``` debe tener su ```<label>```
+- [X] Los labels deben contener el atributo **for** (el for debe contener el id del input al cual se referencia) 
 - [ ] Si hay una tabla en la página, debe contener ```<caption></caption>```
 
 ### Requisitos del Segundo Parcial

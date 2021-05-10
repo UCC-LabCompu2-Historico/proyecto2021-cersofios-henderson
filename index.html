@@ -10,7 +10,7 @@
 </head>
 <body>
 <header>
-    <img src="imagenes/logo_calculadora.png">
+    <img src="imagenes/logo_calculadora.png" alt="Calculadora">
     <h1>Calculadora de Area de Figuras Geometricas</h1>
 </header>
 <nav></nav>
@@ -20,10 +20,10 @@
             * Elija la figura a la cual desea calcularle el area:
         </p>
         <p>
-            <input type="radio" name="figura" value="Triangulo"> Triangulo
-            <input type="radio" name="figura" value="Cuadrado"> Cuadrado
-            <input type="radio" name="figura" value="Circulo"> Circulo
-            <input type="radio" name="figura" value="Rectangulo"> Rectangulo
+            <label for="triangulo">Triangulo</label><input type="radio" name="figura" value="Triangulo" id="triangulo">
+            <label for="cuadrado">Cuadrado</label><input type="radio" name="figura" value="Cuadrado" id="cuadrado">
+            <label for="circulo">Circulo</label><input type="radio" name="figura" value="Circulo" id="circulo">
+            <label for="rectangulo">Rectangulo</label><input type="radio" name="figura" value="Rectangulo" id="rectangulo">
         </p>
     </div>
     <div>
@@ -31,9 +31,10 @@
             * Introduzca los datos de los lados:
         </p>
         <p>
-            <input type="number" id="Base" name="Base" min="0" placeholder="Base">
-            <input type="number" id="Base" name="Altura" min="0" placeholder="Altura">
-            <select name="Unidades de Medida">
+            <label for="Base">Base: </label><input type="number" id="Base" name="Base" min="0" placeholder="Base">
+            <label for="Altura">Altura: </label><input type="number" id="Altura" name="Altura" min="0" placeholder="Altura">
+            <label for="Unidades de Medida"> Unidades de Medida: </label>
+            <select name="Unidades de Medida" id="Unidades de Medida">
                 <option value="Metros">Metros</option>
                 <option value="Centimetros">Centimetros</option>
                 <option value="Milimetros">Milimetros</option>
@@ -42,7 +43,7 @@
             <button type="button">Calcular</button>
         </p>
         <p>
-            Resultado: <output id="area" for="Base Altura"></output>
+            <label for="Resultado">Resultado:</label><output id="Resultado" for="Base Altura"></output>
         </p>
         <p>
             <button type="reset">Reiniciar</button>
