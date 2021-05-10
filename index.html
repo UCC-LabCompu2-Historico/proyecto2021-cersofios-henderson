@@ -26,6 +26,31 @@
             <input type="radio" name="figura" value="Rectangulo"> Rectangulo
         </p>
     </div>
+    <div>
+        <p>
+            * Introduzca los datos de los lados:
+        </p>
+        <p>
+            <input type="number" id="Base" name="Base" min="0" placeholder="Base">
+            <input type="number" id="Base" name="Altura" min="0" placeholder="Altura">
+            <select name="Unidades de Medida">
+                <option value="Metros">Metros</option>
+                <option value="Centimetros">Centimetros</option>
+                <option value="Milimetros">Milimetros</option>
+            </select>
+        <p>
+            <button type="button">Calcular</button>
+        </p>
+        <p>
+            Resultado: <output id="area" for="Base Altura"></output>
+        </p>
+        <p>
+            <button type="reset">Reiniciar</button>
+        </p>
+        <canvas id="img_area">
+            El navegador no soporta canvas
+        </canvas>
+    </div>
 </section>
 </body>
 </html>
