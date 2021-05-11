@@ -1,7 +1,6 @@
 h1{
     color: #af3505;
   }
-<style>
 .titulo{
     font-size:20px;
  }
@@ -10,6 +9,23 @@ h1{
  }
  body{
      font-family: "Book Antiqua";
-     background: linear-gradient(to bottom,lightsalmon,lightgoldenrodyellow);
+     background: #fdb292;
  }
-</style>
+header{
+    float: left;
+    width: 50%;
+}
+.centrado1{
+    margin: 0px 100px;
+}
+.centrado2{
+    margin: 50px 100px;
+}
+.centrado3{
+    margin: 50px 30px;
+}
+section{
+    float: right;
+    width: 50%;
+    margin: 100px 0px;
+}
