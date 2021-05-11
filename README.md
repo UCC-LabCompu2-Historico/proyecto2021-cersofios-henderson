@@ -9,6 +9,8 @@ Esta pagina corresponde a una web para calcular el area de figuras geometricas
 * HTML5
 * CCS3
 
+Link al sitio: [Calculadora de Area de Figuras Geometricas](https://ucc-labcompu2.github.io/proyecto2021-cersofios-henderson/)
+
 ### Requisitos del Primer Parcial
 - [X] El proyecto debe estar subido al repositorio adecuado "Proyecto2021-ApellidoAlumno1-ApellidoAlumno2"
 - [X] La página principal debe llamarse index
