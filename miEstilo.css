@@ -1,33 +1,42 @@
-h1{
+h1 {
     color: #af3505;
-  }
-#Resultado{
-      font-size: 20px;
 }
-.titulo{
-    font-size:20px;
- }
- .titulo2{
-     font-size:20px;
- }
- body{
-     font-family: "Book Antiqua";
-     background: #fdb292;
- }
-header{
+
+#Resultado {
+    font-size: 20px;
+}
+
+.titulo {
+    font-size: 20px;
+}
+
+.titulo2 {
+    font-size: 20px;
+}
+
+body {
+    font-family: "Book Antiqua";
+    background: #fdb292;
+}
+
+header {
     float: left;
     width: 50%;
 }
-.centrado1{
+
+.centrado1 {
     margin: 0px 100px;
 }
-.centrado2{
+
+.centrado2 {
     margin: 50px 100px;
 }
-.centrado3{
+
+.centrado3 {
     margin: 50px 30px;
 }
-section{
+
+section {
     float: right;
     width: 50%;
     margin: 100px 0px;

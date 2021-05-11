@@ -11,13 +11,13 @@
 <body>
 <header>
     <div class="centrado1">
-    <img src="imagenes/logo_calculadora.png" alt="Calculadora">
+        <img src="imagenes/logo_calculadora.png" alt="Calculadora">
     </div>
     <div class="centrado2">
-    <h1>Calculadora de</h1>
+        <h1>Calculadora de</h1>
     </div>
     <div class="centrado3">
-    <h1>Área de Figuras Geométricas</h1>
+        <h1>Área de Figuras Geométricas</h1>
     </div>
 </header>
 <nav></nav>
@@ -25,7 +25,7 @@
     <h5 class="titulo"></h5>
     <div>
         <p>
-        <h3 class="titulo" style="font-size: 20px">* Elija la figura a la cual desea calcularle el area:</h3>
+        <h3 class="titulo">* Elija la figura a la cual desea calcularle el area:</h3>
         </p>
         <p>
             <label for="triangulo">Triangulo</label><input type="radio" name="figura" value="Triangulo" id="triangulo">
@@ -35,10 +35,9 @@
         </p>
     </div>
     <div>
-        <p>
         <h3 class="titulo2">* Introduzca los datos de los lados:</h3>
-        </p>
-        <p>
+    </div>
+    <div>
             <label for="Base">Base: </label><input type="number" id="Base" name="Base" min="0" placeholder="Base">
             <label for="Altura">Altura: </label><input type="number" id="Altura" name="Altura" min="0" placeholder="Altura"><br>
             <label for="Unidades de Medida"> Unidades de Medida: </label>
@@ -47,11 +46,25 @@
                 <option value="Centimetros">Centimetros</option>
                 <option value="Milimetros">Milimetros</option>
             </select>
+    </div>
+    <div>
+        <p>
+        <label for="Radio">Radio: </label><input type="number" id="Radio" name="Radio" min="0" placeholder="Radio"><br>
+        <label for="Unidades de Medida 2"> Unidades de Medida: </label>
+        <select name="Unidades de Medida" id="Unidades de Medida 2">
+            <option value="Metros">Metros</option>
+            <option value="Centimetros">Centimetros</option>
+            <option value="Milimetros">Milimetros</option>
+        </select>
+        </p>
+    </div>
+    <div>
         <p>
             <button type="button">Calcular</button>
         </p>
         <p>
-            <label for="Resultado"><b>Resultado:</b></label><output id="Resultado" for="Base Altura"></output>
+            <label for="Resultado"><b>Resultado:</b></label>
+            <output id="Resultado" for="Base Altura"></output>
         </p>
         <p>
             <button type="reset">Reiniciar</button>
