@@ -17,8 +17,8 @@ Link al sitio: [Calculadora de Area de Figuras Geometricas](https://ucc-labcompu
 - [X] En el ```<head></head>``` incluir las etiquetas ```<meta>``` detallando: autor, descripcion y palabras clave
 - [X] Emplear al menos 3 etiquetas semánticas
 - [X] Emplear ```<header></header>```. En el contenido de la cabecera debe haber un título ```<h1></h1>```, puede tener color de fondo, algún logotipo, etc.
-- [ ] Modificar el Readme.MD y colocar información del proyecto/página (mínimamente: título del proyecto, autores, link de gh-pages, contenido de la página,  listado de tecnologías usadas, etc)
-- [ ] Publicar la Web empleando GitHubPages
+- [X] Modificar el Readme.MD y colocar información del proyecto/página (mínimamente: título del proyecto, autores, link de gh-pages, contenido de la página,  listado de tecnologías usadas, etc)
+- [X] Publicar la Web empleando GitHubPages
 - [X] La estructura de la página debe estar definida con ```<div></div>```
 - [X] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` ó ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio.
 - [X] Debe haber por lo menos una etiqueta ```<img>``` en la página.
