@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Area de Figuras Geometricas</title>
+  <meta content="Sofia Cersofios- Agostina Henderson" name="autor">
+  <meta content="Web para calcular el area de figuras geometricas" name="descripcion">
+  <meta content="area,figuras geometricas,base, altura, lados" name="palabras_principales">
+  <link rel="stylesheet" href="miEstilo.css" type="text/css">
+</head>
+<body>
+<section>
+  <h5 class="titulo"></h5>
+  <div>
+    <p>
+    <h3 class="titulo">* Elija la figura a la cual desea calcularle el area:</h3>
+    </p>
+    <p>
+      <label for="triangulo">Triangulo</label><input type="radio" name="figura" value="Triangulo" id="triangulo">
+      <label for="cuadrado">Cuadrado</label><input type="radio" name="figura" value="Cuadrado" id="cuadrado">
+      <label for="circulo">Circulo</label><input type="radio" name="figura" value="Circulo" id="circulo">
+      <label for="rectangulo">Rectangulo</label><input type="radio" name="figura" value="Rectangulo" id="rectangulo">
+    </p>
+  </div>
+  <div>
+    <h3 class="titulo2">* Introduzca los datos de los lados:</h3>
+  </div>
+  <div>
+    <label for="Base">Base: </label><input type="number" id="Base" name="Base" min="0" placeholder="Base">
+    <label for="Altura">Altura: </label><input type="number" id="Altura" name="Altura" min="0" placeholder="Altura"><br>
+    <label for="UnidadesdeMedida"> Unidades de Medida: </label>
+    <select name="Unidades de Medida" id="UnidadesdeMedida">
+      <option value="Metros">Metros</option>
+      <option value="Centimetros">Centimetros</option>
+      <option value="Milimetros">Milimetros</option>
+    </select>
+  </div>
+  <div>
+    <p>
+      <label for="Radio">Radio: </label><input type="number" id="Radio" name="Radio" min="0" placeholder="Radio"><br>
+      <label for="UnidadesdeMedida2"> Unidades de Medida: </label>
+      <select name="Unidades de Medida" id="UnidadesdeMedida2">
+        <option value="Metros">Metros</option>
+        <option value="Centimetros">Centimetros</option>
+        <option value="Milimetros">Milimetros</option>
+      </select>
+    </p>
+  </div>
+  <div>
+    <p>
+      <button type="button" id="calcular">Calcular</button>
+    </p>
+    <p>
+      <label for="Resultado"><b>Resultado:</b></label>
+      <output id="Resultado" for="Base Altura"></output>
+    </p>
+    <p>
+      <button type="reset" id="reiniciar">Reiniciar</button>
+    </p>
+    <canvas id="img_area">
+      El navegador no soporta canvas
+    </canvas>
+    <img src="imagenes/area.png" alt="Formula Area" id="Area">
+  </div>
+</section>
+</body>

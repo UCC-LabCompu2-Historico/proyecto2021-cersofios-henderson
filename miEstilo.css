@@ -22,26 +22,30 @@ h1 {
 }
 
 header {
-    float: left;
-    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 
 .centrado1 {
-    margin: 70px 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .centrado2 {
-    margin: 0px 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .centrado3 {
-    margin: 0px 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 section {
-    float: right;
     width: 50%;
-    margin: 10px 0px;
+    margin-left: auto;
+    margin-right: auto;
 }
 #calcular{
     width: 100px;
@@ -93,5 +97,16 @@ section {
 }
 #Area{
     margin: 0px 0px;
+}
+#Comenzar{
+    font-family: "Book Antiqua";
+    font-size: 17px;
+    width: 120px;
+    height: 40px;
+    margin: 3px 3px 5px 5px;
+    background-color: #609fa1;
+    border-color: black;
+    border-radius: 15px 15px 15px 15px;
+    text-align: center;
 }
 
