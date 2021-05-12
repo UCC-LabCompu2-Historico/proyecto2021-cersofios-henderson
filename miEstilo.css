@@ -1,5 +1,5 @@
 body{
-    font-family: "Book Antiqua";
+    font-family: 'Newsreader', serif;
     background-image: url("imagenes/fondo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -22,30 +22,16 @@ h1 {
 }
 
 header {
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-}
-
-.centrado1 {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.centrado2 {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.centrado3 {
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 70px;
+    text-align: center;
 }
 
 section {
     width: 50%;
+    margin-top: 17px;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Newsreader', serif;
 }
 #calcular{
     width: 100px;
