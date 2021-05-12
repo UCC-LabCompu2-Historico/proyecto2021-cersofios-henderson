@@ -1,11 +1,12 @@
 body{
+    font-family: "Book Antiqua";
     background-image: url("imagenes/fondo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
 }
 h1 {
-    color: #af3505;
+    color: #609fa1;
 }
 
 #Resultado {
@@ -20,30 +21,77 @@ h1 {
     font-size: 20px;
 }
 
-body {
-    font-family: "Book Antiqua";
-    background: #fdb292;
-}
-
 header {
     float: left;
     width: 50%;
 }
 
 .centrado1 {
-    margin: 0px 100px;
+    margin: 70px 100px;
 }
 
 .centrado2 {
-    margin: 50px 100px;
+    margin: 0px 100px;
 }
 
 .centrado3 {
-    margin: 50px 30px;
+    margin: 0px 30px;
 }
 
 section {
     float: right;
     width: 50%;
-    margin: 100px 0px;
+    margin: 10px 0px;
 }
+#calcular{
+    width: 100px;
+    height: 30px;
+    margin: 3px 3px 5px 5px;
+    background-color: #609fa1;
+    border-color: black;
+    border-radius: 15px 15px 15px 15px;
+    text-align: center;;
+}
+#reiniciar{
+    width: 100px;
+    height: 30px;
+    margin: 3px 3px 5px 5px;
+    background-color: #609fa1;
+    border-color: black;
+    border-radius: 15px 15px 15px 15px;
+    text-align: center;
+}
+#UnidadesdeMedida {
+    width: 100px;
+    height: 30px;
+    margin: 3px 3px 5px 5px;
+    background-color: #609fa1;
+    border-color: black;
+    border-width: 3px;
+    text-align: center;
+}
+#UnidadesdeMedida2 {
+    width: 100px;
+    height: 30px;
+    margin: 3px 3px 5px 5px;
+    background-color: #609fa1;
+    border-color: black;
+    border-width: 3px;
+    text-align: center;
+}
+#Base{
+    border-color: black;
+    border-width: 3px;
+}
+#Altura{
+    border-color: black;
+    border-width: 3px;
+}
+#Radio{
+    border-color: black;
+    border-width: 3px;
+}
+#Area{
+    margin: 0px 0px;
+}
+
