@@ -106,4 +106,16 @@ section {
     border-radius: 15px 15px 15px 15px;
     text-align: center;
 }
+#area_triangulo{
+    display: none;
+}
+#area_circulo{
+    display: none;
+}
+#area_cuadrado{
+    display: none;
+}
+#area_rectangulo{
+    display: none;
+}
 
