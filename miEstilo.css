@@ -68,15 +68,27 @@ section {
     border-width: 3px;
     text-align: center;
 }
-#Base{
+#BaseT{
     border-color: black;
     border-width: 3px;
 }
-#Altura{
+#AlturaT{
+    border-color: black;
+    border-width: 3px;
+}
+#BaseR{
+    border-color: black;
+    border-width: 3px;
+}
+#AlturaR{
     border-color: black;
     border-width: 3px;
 }
 #Radio{
+    border-color: black;
+    border-width: 3px;
+}
+#Lado{
     border-color: black;
     border-width: 3px;
 }

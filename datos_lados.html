@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="miEstilo.css" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="misFunciones.js"></script>
 </head>
 <body>
 <section>
@@ -18,19 +19,30 @@
         <h3 class="titulo">* Elija la figura a la cuál desea calcularle el área:</h3>
         </p>
         <p>
-            <label for="triangulo">Triángulo</label><input type="radio" name="figura" value="Triangulo" id="triangulo">
-            <label for="cuadrado">Cuadrado</label><input type="radio" name="figura" value="Cuadrado" id="cuadrado">
-            <label for="circulo">Círculo</label><input type="radio" name="figura" value="Circulo" id="circulo">
-            <label for="rectangulo">Rectángulo</label><input type="radio" name="figura" value="Rectangulo"
-                                                             id="rectangulo">
+            <label for="triangulo">Triángulo</label><input type="radio" name="figura" value="Triangulo" id="triangulo" onclick="mostrar_ocultar(this.value)">
+            <label for="cuadrado">Cuadrado</label><input type="radio" name="figura" value="Cuadrado" id="cuadrado" onclick="mostrar_ocultar(this.value)">
+            <label for="circulo">Círculo</label><input type="radio" name="figura" value="Circulo" id="circulo" onclick="mostrar_ocultar(this.value)">
+            <label for="rectangulo">Rectángulo</label><input type="radio" name="figura" value="Rectangulo" id="rectangulo" onclick="mostrar_ocultar(this.value)">
         </p>
     </div>
     <div>
-        <h3 class="titulo2">* Introduzca los datos de los lados:</h3>
+        <h3 class="titulo2">* Introduzca los datos:</h3>
+    </div>
+    <div id="area_triangulo">
+        <label for="BaseT">Base: </label><input type="number" id="BaseT" name="BaseT" min="0" placeholder="Base" onchange="AreaTriangulo()">
+        <label for="AlturaT">Altura: </label><input type="number" id="AlturaT" name="AlturaT" min="0" placeholder="Altura" onchange="AreaTriangulo()"><br>
+    </div>
+    <div id="area_cuadrado">
+        <label for="Lado">Lado: </label><input type="number" id="Lado" name="Lado" min="0" placeholder="Lado">
+    </div>
+    <div id="area_circulo">
+        <label for="Radio">Radio: </label><input type="number" id="Radio" name="Radio" min="0" placeholder="Radio">
+    </div>
+    <div id="area_rectangulo">
+        <label for="BaseR">Base: </label><input type="number" id="BaseR" name="BaseR" min="0" placeholder="Base">
+        <label for="AlturaR">Altura: </label><input type="number" id="AlturaR" name="AlturaR" min="0" placeholder="Altura"><br>
     </div>
     <div>
-        <label for="Base">Base: </label><input type="number" id="Base" name="Base" min="0" placeholder="Base">
-        <label for="Altura">Altura: </label><input type="number" id="Altura" name="Altura" min="0" placeholder="Altura"><br>
         <label for="UnidadesdeMedida"> Unidades de Medida: </label>
         <select name="Unidades de Medida" id="UnidadesdeMedida">
             <option value="Metros">Metros</option>
@@ -40,23 +52,10 @@
     </div>
     <div>
         <p>
-            <label for="Radio">Radio: </label><input type="number" id="Radio" name="Radio" min="0"
-                                                     placeholder="Radio"><br>
-            <label for="UnidadesdeMedida2"> Unidades de Medida: </label>
-            <select name="Unidades de Medida" id="UnidadesdeMedida2">
-                <option value="Metros">Metros</option>
-                <option value="Centimetros">Centímetros</option>
-                <option value="Milimetros">Milímetros</option>
-            </select>
-        </p>
-    </div>
-    <div>
-        <p>
             <button type="button" id="calcular">Calcular</button>
         </p>
         <p>
-            <label for="Resultado"><b>Resultado:</b></label>
-            <output id="Resultado" for="Base Altura"></output>
+        RESULTADO <input id="Resultado" type="number" name="Resultado" onchange="AreaTriangulo()" disabled>
         </p>
         <p>
             <button type="reset" id="reiniciar"><a href="index.html">Reiniciar</a></button>
