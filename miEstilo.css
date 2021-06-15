@@ -10,8 +10,10 @@ h1 {
 }
 
 #Resultado {
-    font-size: 20px;
-    margin:100px 105px 100px 200px;
+    font-size: 30px;
+    border-color: black;
+    border-width: 3px;
+    width: 200px;
            }
 
 .titulo {
