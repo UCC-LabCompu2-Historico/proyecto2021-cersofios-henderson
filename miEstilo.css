@@ -1,9 +1,9 @@
 body{
     font-family: 'Newsreader', serif;
-    background-image: url("imagenes/fondo.jpg");
+    background-image: url("imagenes/fondopag2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: scroll;
+    background-attachment: fixed;
 }
 h1 {
     color: #609fa1;
@@ -11,7 +11,8 @@ h1 {
 
 #Resultado {
     font-size: 20px;
-}
+    margin:100px 105px 100px 200px;
+           }
 
 .titulo {
     font-size: 20px;
@@ -22,21 +23,19 @@ h1 {
 }
 
 header {
-    margin-top: 70px;
+    margin:105px 115px 70px 115px;
     text-align: center;
 }
 
 section {
     width: 50%;
-    margin-top: 17px;
-    margin-left: auto;
-    margin-right: auto;
+    margin:130px 130px 5px 400px;
     font-family: 'Newsreader', serif;
 }
 #calcular{
     width: 100px;
     height: 30px;
-    margin: 3px 3px 5px 5px;
+    margin: 20px 5px 5px 2px;
     background-color: #609fa1;
     border-color: black;
     border-radius: 15px 15px 15px 15px;
@@ -45,7 +44,7 @@ section {
 #reiniciar{
     width: 100px;
     height: 30px;
-    margin: 3px 3px 5px 5px;
+    margin: 70px 5px 5px 200px;
     background-color: #609fa1;
     border-color: black;
     border-radius: 15px 15px 15px 15px;
@@ -54,7 +53,7 @@ section {
 #UnidadesdeMedida {
     width: 100px;
     height: 30px;
-    margin: 3px 3px 5px 5px;
+    margin: 10px 3px 5px 10px;
     background-color: #609fa1;
     border-color: black;
     border-width: 3px;
@@ -63,7 +62,7 @@ section {
 #UnidadesdeMedida2 {
     width: 100px;
     height: 30px;
-    margin: 3px 3px 5px 5px;
+    margin: 20px 3px 5px 10px;
     background-color: #609fa1;
     border-color: black;
     border-width: 3px;
@@ -89,7 +88,7 @@ section {
     font-size: 17px;
     width: 120px;
     height: 40px;
-    margin: 3px 3px 5px 5px;
+    margin: 10px 10px 5px 5px;
     background-color: #609fa1;
     border-color: black;
     border-radius: 15px 15px 15px 15px;
