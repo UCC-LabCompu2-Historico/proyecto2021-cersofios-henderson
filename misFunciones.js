@@ -12,7 +12,6 @@
 /**
  * Función que permite dibujar las figuras geométricas según su Unidad de Medida
  * @method dibujarCanvas
- * @param {string} id - El id de los div que contienen los datos de cada figura geométrica, id del canvas y id de las Unidades de Medida
  * @return {canvas} dibujo de la figura geométrica
  */
 
@@ -97,74 +96,77 @@ function CalculodeArea() {
         document.getElementById("Resultado").value = AlturaR * BaseR;
     }
 }
-function dibujarCanvas(id){
-    var canvas = document.getElementById("Canvas");
+
+function dibujarCanvas() {
+    var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
     var xmax = canvas.width;
-    var ymax =canvas.height;
+    var ymax = canvas.height;
     var margen = 20;
-    if (id == metros){
-        if (id == triangulo){
+    if (document.getElementById("metros").checked) {
+        if (document.getElementById("triangulo").checked) {
             ctx.beginPath();
-            ctx.moveTo(75,50);
-            ctx.lineTo(100,75);
-            ctx.lineTo(100,25);
+            ctx.moveTo(75, 50);
+            ctx.lineTo(100, 75);
+            ctx.lineTo(100, 25);
             ctx.closePath();
             ctx.fill();
-        } else if (id == circulo){
-            ctx.arc(xmax/2,ymax/2,20,0,2*Math.PI);
+        } else if (document.getElementById("circulo").checked) {
+            ctx.arc(xmax / 2, ymax / 2, 20, 0, 2 * Math.PI);
             ctx.stroke();
             ctx.fillStyle = "#99338f";
             ctx.fill();
-        } else if (id == cuadrado){
+        } else if (document.getElementById("cuadrado").checked) {
             ctx.fillStyle = "#566bb6";
-            ctx.fillRect(0+margen,0+margen,100,100);
-        } else if (id == rectangulo){
+            ctx.fillRect(0 + margen, 0 + margen, 100, 100);
+        } else if (document.getElementById("rectangulo").checked) {
             ctx.fillStyle = "#566bb6";
-            ctx.fillRect(0+margen,0+margen,100,250);
+            ctx.fillRect(0 + margen, 0 + margen, 100, 250);
         }
-    } else if (id == centimetros){
-        if (id == triangulo){
+    } else if (document.getElementById("centimetros").checked) {
+        if (document.getElementById("triangulo").checked) {
             ctx.beginPath();
-            ctx.moveTo(75,50);
-            ctx.lineTo(100,75);
-            ctx.lineTo(100,25);
+            ctx.moveTo(75, 50);
+            ctx.lineTo(100, 75);
+            ctx.lineTo(100, 25);
             ctx.closePath();
             ctx.fill();
-        } else if (id == circulo){
-            ctx.arc(xmax/2,ymax/2,20,0,2*Math.PI);
+        } else if (document.getElementById("circulo").checked) {
+            ctx.arc(xmax / 2, ymax / 2, 20, 0, 2 * Math.PI);
             ctx.stroke();
             ctx.fillStyle = "#99338f";
             ctx.fill();
-        } else if (id == cuadrado){
+        } else if (document.getElementById("cuadrado").checked) {
             ctx.fillStyle = "#566bb6";
-            ctx.fillRect(0+margen,0+margen,100,100);
-        } else if (id == rectangulo){
+            ctx.fillRect(0 + margen, 0 + margen, 100, 100);
+        } else if (document.getElementById("rectangulo").checked) {
             ctx.fillStyle = "#566bb6";
-            ctx.fillRect(0+margen,0+margen,100,250);
+            ctx.fillRect(0 + margen, 0 + margen, 100, 250);
         }
-    } else if (id == milimetros){
-        if (id == triangulo){
-            ctx.beginPath();
-            ctx.moveTo(75,50);
-            ctx.lineTo(100,75);
-            ctx.lineTo(100,25);
-            ctx.closePath();
-            ctx.fill();
-        } else if (id == circulo){
-            ctx.arc(xmax/2,ymax/2,20,0,2*Math.PI);
-            ctx.stroke();
-            ctx.fillStyle = "#99338f";
-            ctx.fill();
-        } else if (id == cuadrado){
-            ctx.fillStyle = "#566bb6";
-            ctx.fillRect(0+margen,0+margen,100,100);
-        } else if (id == rectangulo){
-            ctx.fillStyle = "#566bb6";
-            ctx.fillRect(0+margen,0+margen,100,250);
+    } else if (document.getElementById("milimetros").checked) {
+            if (document.getElementById("triangulo").checked) {
+                ctx.beginPath();
+                ctx.moveTo(75, 50);
+                ctx.lineTo(100, 75);
+                ctx.lineTo(100, 25);
+                ctx.closePath();
+                ctx.fill();
+            } else if (document.getElementById("circulo").checked) {
+                ctx.arc(xmax / 2, ymax / 2, 20, 0, 2 * Math.PI);
+                ctx.stroke();
+                ctx.fillStyle = "#99338f";
+                ctx.fill();
+            } else if (document.getElementById("cuadrado").checked) {
+                ctx.fillStyle = "#566bb6";
+                ctx.fillRect(0 + margen, 0 + margen, 100, 100);
+            } else if (document.getElementById("rectangulo").checked) {
+                ctx.fillStyle = "#566bb6";
+                ctx.fillRect(0 + margen, 0 + margen, 100, 250);
+            }
         }
-    }
 
-}
+
+
+
 
 

@@ -28,17 +28,17 @@
     <div>
         <h3 class="titulo2">* Introduzca los datos:</h3>
     </div>
-    <div id="area_triangulo" onchange="CalculodeArea(this.id)" onload="dibujarCanvas(this.id)">
+    <div id="area_triangulo" onchange="CalculodeArea()" onload="dibujarCanvas(this.id)">
         <label for="BaseT">Base: </label><input type="number" id="BaseT" name="BaseT" min="0" placeholder="Base">
         <label for="AlturaT">Altura: </label><input type="number" id="AlturaT" name="AlturaT" min="0" placeholder="Altura"><br>
     </div>
-    <div id="area_cuadrado" onchange="CalculodeArea(this.id)" onload="dibujarCanvas(this.id)">
+    <div id="area_cuadrado" onchange="CalculodeArea()" onload="dibujarCanvas(this.id)">
         <label for="Lado">Lado: </label><input type="number" id="Lado" name="Lado" min="0" placeholder="Lado">
     </div>
-    <div id="area_circulo" onchange="CalculodeArea(this.id)" onload="dibujarCanvas(this.id)">
+    <div id="area_circulo" onchange="CalculodeArea()" onload="dibujarCanvas(this.id)">
         <label for="Radio">Radio: </label><input type="number" id="Radio" name="Radio" min="0" placeholder="Radio">
     </div>
-    <div id="area_rectangulo" onchange="CalculodeArea(this.id)" onload="dibujarCanvas(this.id)">
+    <div id="area_rectangulo" onchange="CalculodeArea()" onload="dibujarCanvas(this.id)">
         <label for="BaseR">Base: </label><input type="number" id="BaseR" name="BaseR" min="0" placeholder="Base">
         <label for="AlturaR">Altura: </label><input type="number" id="AlturaR" name="AlturaR" min="0" placeholder="Altura"><br>
     </div>
@@ -52,12 +52,12 @@
     </div>
     <div>
         <p>
-        RESULTADO: <input id="Resultado" type="number" name="Resultado" onchange="CalculodeArea(this.id)" disabled>
+        RESULTADO: <input id="Resultado" type="number" name="Resultado" onchange="CalculodeArea()" disabled>
         </p>
         <p>
             <button type="reset" id="reiniciar"><a href="index.html">Reiniciar</a></button>
         </p>
-        <canvas id="canvas" width="300px" height="300px" onload="dibujarCanvas(this.id)">
+        <canvas id="canvas" width="300px" height="300px" onload="dibujarCanvas()">
             El navegador no soporta canvas
         </canvas>
     </div>
