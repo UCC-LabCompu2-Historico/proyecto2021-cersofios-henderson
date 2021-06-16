@@ -10,6 +10,13 @@
  * @param {string} id - El id de los div que contienen los datos de cada figura geométrica (Base y Altura, Lado o Radio)
  * @return {number} Resultado del Área
  */
+/**
+ * Función que permite dibujar las figuras geométricas según su Unidad de Medida
+ * @method dibujarCanvas
+ * @param {string} id - El id de los div que contienen los datos de cada figura geométrica, id del canvas y id de las Unidades de Medida
+ * @return {canvas} dibujo de la figura geométrica
+ */
+
 function mostrar_ocultar(valor){
     if (valor == "Triangulo") {
         document.getElementById("area_triangulo").style.display = 'block';
@@ -90,34 +97,74 @@ function CalculodeArea(id) {
         document.getElementById("Resultado").value = parametro1 * parametro2;
     }
 }
-function Calcular(){
-    document.getElementById("Resultado").innerHTML = CalculodeArea();
-}
 function dibujarCanvas(id){
     var canvas = document.getElementById("Canvas");
     var ctx = canvas.getContext("2d");
     var xmax = canvas.width;
     var ymax =canvas.height;
     var margen = 20;
-    if (id == area_triangulo){
-        ctx.beginPath();
-        ctx.moveTo(75,50);
-        ctx.lineTo(100,75);
-        ctx.lineTo(100,25);
-        ctx.closePath();
-        ctx.fill();
-    } else if (id == area_circulo){
-        ctx.arc(xmax/2,ymax/2,20,0,2*Math.PI);
-        ctx.stroke();
-        ctx.fillStyle = "#99338f";
-        ctx.fill();
-    } else if (id == area_cuadrado){
-        ctx.fillStyle = "#566bb6";
-        ctx.fillRect(0+margen,0+margen,100,100);
-    } else if (id == area_rectangulo){
-        ctx.fillStyle = "#566bb6";
-        ctx.fillRect(0+margen,0+margen,100,250);
+    if (id == metros){
+        if (id == area_triangulo){
+            ctx.beginPath();
+            ctx.moveTo(75,50);
+            ctx.lineTo(100,75);
+            ctx.lineTo(100,25);
+            ctx.closePath();
+            ctx.fill();
+        } else if (id == area_circulo){
+            ctx.arc(xmax/2,ymax/2,20,0,2*Math.PI);
+            ctx.stroke();
+            ctx.fillStyle = "#99338f";
+            ctx.fill();
+        } else if (id == area_cuadrado){
+            ctx.fillStyle = "#566bb6";
+            ctx.fillRect(0+margen,0+margen,100,100);
+        } else if (id == area_rectangulo){
+            ctx.fillStyle = "#566bb6";
+            ctx.fillRect(0+margen,0+margen,100,250);
+        }
+    } else if (id == centimetros){
+        if (id == area_triangulo){
+            ctx.beginPath();
+            ctx.moveTo(75,50);
+            ctx.lineTo(100,75);
+            ctx.lineTo(100,25);
+            ctx.closePath();
+            ctx.fill();
+        } else if (id == area_circulo){
+            ctx.arc(xmax/2,ymax/2,20,0,2*Math.PI);
+            ctx.stroke();
+            ctx.fillStyle = "#99338f";
+            ctx.fill();
+        } else if (id == area_cuadrado){
+            ctx.fillStyle = "#566bb6";
+            ctx.fillRect(0+margen,0+margen,100,100);
+        } else if (id == area_rectangulo){
+            ctx.fillStyle = "#566bb6";
+            ctx.fillRect(0+margen,0+margen,100,250);
+        }
+    } else if (id == milimetros){
+        if (id == area_triangulo){
+            ctx.beginPath();
+            ctx.moveTo(75,50);
+            ctx.lineTo(100,75);
+            ctx.lineTo(100,25);
+            ctx.closePath();
+            ctx.fill();
+        } else if (id == area_circulo){
+            ctx.arc(xmax/2,ymax/2,20,0,2*Math.PI);
+            ctx.stroke();
+            ctx.fillStyle = "#99338f";
+            ctx.fill();
+        } else if (id == area_cuadrado){
+            ctx.fillStyle = "#566bb6";
+            ctx.fillRect(0+margen,0+margen,100,100);
+        } else if (id == area_rectangulo){
+            ctx.fillStyle = "#566bb6";
+            ctx.fillRect(0+margen,0+margen,100,250);
+        }
     }
+
 }
 
 
