@@ -42,7 +42,7 @@ function mostrar_ocultar(valor){
 }
 function CalculodeArea(id) {
     if (id == area_triangulo) {
-        var parametro1, parametro2;
+        var parametro1, parametro2, resultado;
         if (parametro1.includes(",")) {
             parametro1 = parametro1.replace(",", ".");
         }
