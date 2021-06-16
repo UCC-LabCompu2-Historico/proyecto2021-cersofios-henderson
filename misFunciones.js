@@ -7,7 +7,6 @@
 /**
  * Función que permite calcular el área de las figuras (Triángulo, Cuadrado, Círculo o Rectángulo)
  * @method CalculodeArea
- * @param {string} id - El id de los div que contienen los datos de cada figura geométrica (Base y Altura, Lado o Radio)
  * @return {number} Resultado del Área
  */
 /**
@@ -40,61 +39,62 @@ function mostrar_ocultar(valor){
         document.getElementById("area_rectangulo").style.display = 'block';
     }
 }
-function CalculodeArea(id) {
-    if (id == area_triangulo) {
-        var parametro1, parametro2;
-        if (parametro1.includes(",")) {
-            parametro1 = parametro1.replace(",", ".");
+function CalculodeArea() {
+    var BaseT, AlturaT, Lado, Radio, BaseR, AlturaR;
+    BaseT = document.getElementById("BaseT").value;
+    AlturaT = document.getElementById("AlturaT").value;
+    Lado = document.getElementById("Lado").value;
+    Radio = document.getElementById("Radio").value;
+    BaseR = document.getElementById("BaseR").value;
+    AlturaR = document.getElementById("AlturaR").value;
+
+    if (document.getElementById("triangulo").checked) {
+
+        if (BaseT.includes(",")) {
+            BaseT = BaseT.replace(",", ".");
         }
-        if (parametro2.includes(",")) {
-            parametro2 = parametro2.replace(",", ".");
+        if (AlturaT.includes(",")) {
+            AlturaT = AlturaT.replace(",", ".");
         }
-        if (isNaN(parametro1)) {
-            alert("Se ingreso un valor invalido " + id);
+        if (isNaN(BaseT)) {
+            alert("Se ingreso un valor incorrecto en Base del Triangulo ");
         }
-        if (isNaN(parametro2)) {
-            alert("Se ingreso un valor invalido " + id);
+        if (isNaN(AlturaT)) {
+            alert("Se ingreso un valor incorrecto en Altura del Triangulo ");
         }
-        parametro1 = Number(document.getElementById("BaseT").value);
-        parametro2 = Number(document.getElementById("AlturaT").value);
-        document.getElementById("Resultado").value = (parametro1 * parametro2) / 2;
-    } else if (id == area_cuadrado){
-        var parametro1;
-        if (parametro1.includes(",")){
-            parametro1=parametro1.replace(",",".");
+
+        document.getElementById("Resultado").value = (BaseT * AlturaT) / 2;
+    } else if (document.getElementById("cuadrado").checked) {
+        if (Lado.includes(",")) {
+            Lado = Lado.replace(",", ".");
         }
-        if (isNaN(parametro1)) {
-            alert("Se ingreso un valor invalido " + id);
+        if (isNaN(Lado)) {
+            alert("Se ingreso un valor incorrecto en lado del cuadrado ");
         }
-        parametro1=Number(document.getElementById("Lado").value);
-        document.getElementById("Resultado").value = parametro1 * parametro1;
-    } else if (id == area_circulo){
-        var parametro1;
-        if (parametro1.includes(",")){
-            parametro1=parametro1.replace(",",".");
+        document.getElementById("Resultado").value = Lado * Lado;
+    } else if (document.getElementById("circulo").checked) {
+        if (Radio.includes(",")) {
+            Radio = Radio.replace(",", ".");
         }
-        if (isNaN(parametro1)) {
-            alert("Se ingreso un valor invalido " + id);
+        if (isNaN(Radio)) {
+            alert("Se ingreso un valor incorrecto en Radio ");
         }
-        parametro1=Number(document.getElementById("Radio").value);
-        document.getElementById("Resultado").value = (parametro1 * parametro1) * Math.PI ;
-    } else if (id == area_rectangulo){
-        var parametro1, parametro2;
-        if (parametro1.includes(",")) {
-            parametro1 = parametro1.replace(",", ".");
+        document.getElementById("Resultado").value = (Radio * Radio) * Math.PI;
+    } else if (document.getElementById("Rectangulo").checked) {
+
+        if (BaseR.includes(",")) {
+            BaseR = BaseR.replace(",", ".");
         }
-        if (parametro2.includes(",")) {
-            parametro2 = parametro2.replace(",", ".");
+        if (AlturaR.includes(",")) {
+            AlturaR = AlturaR.replace(",", ".");
         }
-        if (isNaN(parametro1)) {
-            alert("Se ingreso un valor invalido " + id);
+        if (isNaN(BaseR)) {
+            alert("Se ingreso un valor incorrecto en la Base del Rectangulo ");
         }
-        if (isNaN(parametro2)) {
-            alert("Se ingreso un valor invalido " + id);
+        if (isNaN(AlturaR)) {
+            alert("Se ingreso un valor incorrecto en la Altura del rectángulo ");
         }
-        parametro1 = Number(document.getElementById("BaseR").value);
-        parametro2 = Number(document.getElementById("AlturaR").value);
-        document.getElementById("Resultado").value = parametro1 * parametro2;
+        document.getElementById("Resultado").value = AlturaR * BaseR;
     }
 }
 function dibujarCanvas(id){
