@@ -154,15 +154,16 @@ function dibujarCanvas() {
         } else if (document.getElementById("circulo").checked) {
             ctx.arc(xmax / 2, ymax / 2, 20, 0, 2 * Math.PI);
             ctx.stroke();
-            ctx.fillStyle = "#99338f";
+            ctx.fillStyle = "#999999";
             ctx.fill();
         } else if (document.getElementById("cuadrado").checked) {
-            ctx.fillStyle = "#566bb6";
+            ctx.fillStyle = "#999999";
             ctx.fillRect(0 + margen, 0 + margen, 100, 100);
         } else if (document.getElementById("rectangulo").checked) {
-            ctx.fillStyle = "#566bb6";
+            ctx.fillStyle = "#999999";
             ctx.fillRect(0 + margen, 0 + margen, 100, 250);
         }
-    }}
+    }
+}
 
 
