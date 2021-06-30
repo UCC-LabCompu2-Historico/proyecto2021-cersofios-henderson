@@ -4,16 +4,6 @@
  * @param {string} valor - El valor de los radio button (Triángulo, Cuadrado, Círculo o Rectángulo)
  * @return
  */
-/**
- * Función que permite calcular el área de las figuras (Triángulo, Cuadrado, Círculo o Rectángulo)
- * @method CalculodeArea
- * @return {number} Resultado del Área
- */
-/**
- * Función que permite dibujar las figuras geométricas según su Unidad de Medida
- * @method dibujarCanvas
- * @return {canvas} dibujo de la figura geométrica
- */
 
 function mostrar_ocultar(valor){
     if (valor == "Triangulo") {
@@ -38,6 +28,12 @@ function mostrar_ocultar(valor){
         document.getElementById("area_rectangulo").style.display = 'block';
     }
 }
+/**
+ * Función que permite calcular el área de las figuras (Triángulo, Cuadrado, Círculo o Rectángulo)
+ * @method CalculodeArea
+ * @return {number} Resultado del Área
+ */
+
 function CalculodeArea() {
     var BaseT, AlturaT, Lado, Radio, BaseR, AlturaR;
     BaseT = document.getElementById("BaseT").value;
@@ -55,11 +51,17 @@ function CalculodeArea() {
         if (AlturaT.includes(",")) {
             AlturaT = AlturaT.replace(",", ".");
         }
+        if(BaseT<0){
+            alert("Se ingreso un valor incorrecto en Base del Triángulo ");
+        }
+        if(AlturaT<0){
+            alert("Se ingreso un valor incorrecto en Altura del Triángulo ");
+        }
         if (isNaN(BaseT)) {
-            alert("Se ingreso un valor incorrecto en Base del Triangulo ");
+            alert("Se ingreso un valor incorrecto en Base del Triángulo ");
         }
         if (isNaN(AlturaT)) {
-            alert("Se ingreso un valor incorrecto en Altura del Triangulo ");
+            alert("Se ingreso un valor incorrecto en Altura del Triángulo ");
         }
 
         document.getElementById("Resultado").value = (BaseT * AlturaT) / 2;
@@ -67,16 +69,22 @@ function CalculodeArea() {
         if (Lado.includes(",")) {
             Lado = Lado.replace(",", ".");
         }
+        if(Lado<0){
+            alert("Se ingreso un valor incorrecto en el Lado del Cuadrado ");
+        }
         if (isNaN(Lado)) {
-            alert("Se ingreso un valor incorrecto en lado del cuadrado ");
+            alert("Se ingreso un valor incorrecto en el Lado del Cuadrado ");
         }
         document.getElementById("Resultado").value = Lado * Lado;
     } else if (document.getElementById("circulo").checked) {
         if (Radio.includes(",")) {
             Radio = Radio.replace(",", ".");
         }
+        if(Radio<0){
+            alert("Se ingreso un valor incorrecto en el Radio del Círculo ");
+        }
         if (isNaN(Radio)) {
-            alert("Se ingreso un valor incorrecto en Radio ");
+            alert("Se ingreso un valor incorrecto en el Radio del Círculo ");
         }
         document.getElementById("Resultado").value = (Radio * Radio) * Math.PI;
     } else if (document.getElementById("rectangulo").checked) {
@@ -87,16 +95,26 @@ function CalculodeArea() {
         if (AlturaR.includes(",")) {
             AlturaR = AlturaR.replace(",", ".");
         }
+        if(BaseR<0){
+            alert("Se ingreso un valor incorrecto en Base del Rectángulo ");
+        }
+        if(AlturaR<0){
+            alert("Se ingreso un valor incorrecto en Altura del Rectángulo ");
+        }
         if (isNaN(BaseR)) {
-            alert("Se ingreso un valor incorrecto en la Base del Rectangulo ");
+            alert("Se ingreso un valor incorrecto en la Base del Rectángulo ");
         }
         if (isNaN(AlturaR)) {
-            alert("Se ingreso un valor incorrecto en la Altura del rectángulo ");
+            alert("Se ingreso un valor incorrecto en la Altura del Rectángulo ");
         }
         document.getElementById("Resultado").value = AlturaR * BaseR;
     }
 }
-
+/**
+ * Función que permite dibujar las figuras geométricas según su Unidad de Medida
+ * @method dibujarCanvas
+ * @return {canvas} dibujo de la figura geométrica
+ */
 function dibujarCanvas() {
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");

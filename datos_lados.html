@@ -29,18 +29,18 @@
         <h3 class="titulo2">* Introduzca los datos:</h3>
     </div>
     <div id="area_triangulo" onchange="CalculodeArea()" onload="dibujarCanvas()">
-        <label for="BaseT">Base: </label><input type="number" id="BaseT" name="BaseT" min="0" placeholder="Base">
-        <label for="AlturaT">Altura: </label><input type="number" id="AlturaT" name="AlturaT" min="0" placeholder="Altura"><br>
+        <label for="BaseT">Base: </label><input type="text" id="BaseT" name="BaseT" min="0" placeholder="Base">
+        <label for="AlturaT">Altura: </label><input type="text" id="AlturaT" name="AlturaT" min="0" placeholder="Altura"><br>
     </div>
     <div id="area_cuadrado" onchange="CalculodeArea()" onload="dibujarCanvas()">
-        <label for="Lado">Lado: </label><input type="number" id="Lado" name="Lado" min="0" placeholder="Lado">
+        <label for="Lado">Lado: </label><input type="text" id="Lado" name="Lado" min="0" placeholder="Lado">
     </div>
     <div id="area_circulo" onchange="CalculodeArea()" onload="dibujarCanvas()">
-        <label for="Radio">Radio: </label><input type="number" id="Radio" name="Radio" min="0" placeholder="Radio">
+        <label for="Radio">Radio: </label><input type="text" id="Radio" name="Radio" min="0" placeholder="Radio">
     </div>
     <div id="area_rectangulo" onchange="CalculodeArea()" onload="dibujarCanvas()">
-        <label for="BaseR">Base: </label><input type="number" id="BaseR" name="BaseR" min="0" placeholder="Base">
-        <label for="AlturaR">Altura: </label><input type="number" id="AlturaR" name="AlturaR" min="0" placeholder="Altura"><br>
+        <label for="BaseR">Base: </label><input type="text" id="BaseR" name="BaseR" min="0" placeholder="Base">
+        <label for="AlturaR">Altura: </label><input type="text" id="AlturaR" name="AlturaR" min="0" placeholder="Altura"><br>
     </div>
     <div>
         <label for="UnidadesdeMedida"> Unidades de Medida: </label>
@@ -50,14 +50,14 @@
             <option value="Milimetros" id="milimetros" onload="dibujarCanvas()">Milímetros</option>
         </select>
     </div>
-    <div>
+    <div onload="dibujarCanvas()">
         <p>
             RESULTADO: <input id="Resultado" type="number" name="Resultado" onchange="CalculodeArea()" disabled>
         </p>
         <p>
             <button type="reset" id="reiniciar"><a href="index.html">Reiniciar</a></button>
         </p>
-        <canvas id="canvas" width="300px" height="300px" onload="dibujarCanvas()">
+        <canvas id="canvas" width="300px" height="300px">
             El navegador no soporta canvas
         </canvas>
     </div>
