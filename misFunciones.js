@@ -77,6 +77,7 @@ function CalculodeArea() {
             alert("Se ingreso un valor incorrecto en el Lado del Cuadrado ");
         }
         document.getElementById("Resultado").value = Lado * Lado;
+        DibujarCuadrado(Lado);
     } else if (document.getElementById("circulo").checked) {
         if (Radio.includes(",")) {
             Radio = Radio.replace(",", ".");
@@ -88,6 +89,7 @@ function CalculodeArea() {
             alert("Se ingreso un valor incorrecto en el Radio del Círculo ");
         }
         document.getElementById("Resultado").value = (Radio * Radio) * Math.PI;
+        DibujarCirculo(Radio);
     } else if (document.getElementById("rectangulo").checked) {
 
         if (BaseR.includes(",")) {
@@ -109,6 +111,7 @@ function CalculodeArea() {
             alert("Se ingreso un valor incorrecto en la Altura del Rectángulo ");
         }
         document.getElementById("Resultado").value = AlturaR * BaseR;
+        DibujarRectangulo(BaseR, AlturaR);
     }
     //dibujarCanvas();
 }
@@ -196,6 +199,29 @@ function DibujarTriangulo(Base, Altura){
     ctx.lineTo(100, 25);
     ctx.closePath();
     ctx.fill();
+
+}
+function DibujarRectangulo(Base, Altura){
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#999999";
+    ctx.fillRect(0 + margen, 0 + margen, 100, 250);
+
+}
+function DibujarCirculo(Radio){
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.arc(xmax / 2, ymax / 2, 20, 0, 2 * Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "#99338f";
+    ctx.fill();
+
+}
+function DibujarCuadrado(Lado){
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#566bb6";
+    ctx.fillRect(0 + margen, 0 + margen, 100, 100);
 
 }
 
