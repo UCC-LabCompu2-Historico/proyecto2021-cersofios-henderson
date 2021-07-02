@@ -65,6 +65,7 @@ function CalculodeArea() {
         }
 
         document.getElementById("Resultado").value = (BaseT * AlturaT) / 2;
+        DibujarTriangulo(BaseT, AlturaT);
     } else if (document.getElementById("cuadrado").checked) {
         if (Lado.includes(",")) {
             Lado = Lado.replace(",", ".");
@@ -109,6 +110,7 @@ function CalculodeArea() {
         }
         document.getElementById("Resultado").value = AlturaR * BaseR;
     }
+    //dibujarCanvas();
 }
 /**
  * Función que permite dibujar las figuras geométricas según su Unidad de Medida
@@ -121,7 +123,8 @@ function dibujarCanvas() {
     var xmax = canvas.width;
     var ymax = canvas.height;
     var margen = 20;
-    if (document.getElementById("metros").checked) {
+    console.log("FuncionDibujar");
+    //if (document.getElementById("metros").checked) {
         if (document.getElementById("triangulo").checked) {
             ctx.beginPath();
             ctx.moveTo(75, 50);
@@ -141,7 +144,8 @@ function dibujarCanvas() {
             ctx.fillStyle = "#566bb6";
             ctx.fillRect(0 + margen, 0 + margen, 100, 250);
         }
-    } else if (document.getElementById("centimetros").checked) {
+    //}
+    else if (document.getElementById("centimetros").checked) {
         if (document.getElementById("triangulo").checked) {
             ctx.beginPath();
             ctx.moveTo(75, 50);
@@ -182,6 +186,17 @@ function dibujarCanvas() {
             ctx.fillRect(0 + margen, 0 + margen, 100, 250);
         }
     }
+}
+function DibujarTriangulo(Base, Altura){
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(75, 50);
+    ctx.lineTo(100, 75);
+    ctx.lineTo(100, 25);
+    ctx.closePath();
+    ctx.fill();
+
 }
 
 
