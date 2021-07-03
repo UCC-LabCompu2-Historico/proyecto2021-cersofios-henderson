@@ -113,113 +113,69 @@ function CalculodeArea() {
         document.getElementById("Resultado").value = AlturaR * BaseR;
         DibujarRectangulo(BaseR, AlturaR);
     }
-    //dibujarCanvas();
 }
 /**
- * Función que permite dibujar las figuras geométricas según su Unidad de Medida
- * @method dibujarCanvas
+ * Función que permite dibujar un triángulo según la longitud de su Base y Altura
+ * @method DibujarTriangulo
+ * @param Base - La base ingresada por el usuario
+ * @param Altura - La altura ingresada por el usuario
  * @return {canvas} dibujo de la figura geométrica
  */
-function dibujarCanvas() {
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    var xmax = canvas.width;
-    var ymax = canvas.height;
-    var margen = 20;
-    console.log("FuncionDibujar");
-    //if (document.getElementById("metros").checked) {
-        if (document.getElementById("triangulo").checked) {
-            ctx.beginPath();
-            ctx.moveTo(75, 50);
-            ctx.lineTo(100, 75);
-            ctx.lineTo(100, 25);
-            ctx.closePath();
-            ctx.fill();
-        } else if (document.getElementById("circulo").checked) {
-            ctx.arc(xmax / 2, ymax / 2, 20, 0, 2 * Math.PI);
-            ctx.stroke();
-            ctx.fillStyle = "#99338f";
-            ctx.fill();
-        } else if (document.getElementById("cuadrado").checked) {
-            ctx.fillStyle = "#566bb6";
-            ctx.fillRect(0 + margen, 0 + margen, 100, 100);
-        } else if (document.getElementById("rectangulo").checked) {
-            ctx.fillStyle = "#566bb6";
-            ctx.fillRect(0 + margen, 0 + margen, 100, 250);
-        }
-    //}
-    else if (document.getElementById("centimetros").checked) {
-        if (document.getElementById("triangulo").checked) {
-            ctx.beginPath();
-            ctx.moveTo(75, 50);
-            ctx.lineTo(100, 75);
-            ctx.lineTo(100, 25);
-            ctx.closePath();
-            ctx.fill();
-        } else if (document.getElementById("circulo").checked) {
-            ctx.arc(xmax / 2, ymax / 2, 20, 0, 2 * Math.PI);
-            ctx.stroke();
-            ctx.fillStyle = "#99338f";
-            ctx.fill();
-        } else if (document.getElementById("cuadrado").checked) {
-            ctx.fillStyle = "#566bb6";
-            ctx.fillRect(0 + margen, 0 + margen, 100, 100);
-        } else if (document.getElementById("rectangulo").checked) {
-            ctx.fillStyle = "#566bb6";
-            ctx.fillRect(0 + margen, 0 + margen, 100, 250);
-        }
-    } else if (document.getElementById("milimetros").checked) {
-        if (document.getElementById("triangulo").checked) {
-            ctx.beginPath();
-            ctx.moveTo(75, 50);
-            ctx.lineTo(100, 75);
-            ctx.lineTo(100, 25);
-            ctx.closePath();
-            ctx.fill();
-        } else if (document.getElementById("circulo").checked) {
-            ctx.arc(xmax / 2, ymax / 2, 20, 0, 2 * Math.PI);
-            ctx.stroke();
-            ctx.fillStyle = "#999999";
-            ctx.fill();
-        } else if (document.getElementById("cuadrado").checked) {
-            ctx.fillStyle = "#999999";
-            ctx.fillRect(0 + margen, 0 + margen, 100, 100);
-        } else if (document.getElementById("rectangulo").checked) {
-            ctx.fillStyle = "#999999";
-            ctx.fillRect(0 + margen, 0 + margen, 100, 250);
-        }
-    }
-}
+
 function DibujarTriangulo(Base, Altura){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
+    var variable;
+    variable=(Base*Altura)/10;
     ctx.beginPath();
-    ctx.moveTo(75, 50);
-    ctx.lineTo(100, 75);
-    ctx.lineTo(100, 25);
+    ctx.moveTo(50*variable,50*variable);
+    ctx.lineTo(50*variable, 100*variable);
+    ctx.lineTo(150*variable, 100*variable);
     ctx.closePath();
     ctx.fill();
-
 }
+/**
+ * Función que permite dibujar un rectángulo según la longitud de su Base y Altura
+ * @method DibujarRectangulo
+ * @param Base - La base ingresada por el usuario
+ * @param Altura - La altura ingresada por el usuario
+ * @return {canvas} dibujo de la figura geométrica
+ */
 function DibujarRectangulo(Base, Altura){
     var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
+    var ctx = canvas.getContext("2d");;
+    var margen = 20;
     ctx.fillStyle = "#999999";
     ctx.fillRect(0 + margen, 0 + margen, 100, 250);
 
 }
+/**
+ * Función que permite dibujar un círculo según la longitud de su Radio
+ * @method DibujarCirculo
+ * @param Radio - El radio ingresado por el usuario
+ * @return {canvas} dibujo de la figura geométrica
+ */
 function DibujarCirculo(Radio){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
+    var xmax = canvas.width;
+    var ymax = canvas.height;
     ctx.arc(xmax / 2, ymax / 2, 20, 0, 2 * Math.PI);
     ctx.stroke();
     ctx.fillStyle = "#99338f";
     ctx.fill();
 
 }
+/**
+ * Función que permite dibujar un cuadrado según la longitud de su Lado
+ * @method DibujarCuadrado
+ * @param Lado - El lado ingresado por el usuario
+ * @return {canvas} dibujo de la figura geométrica
+ */
 function DibujarCuadrado(Lado){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
+    var margen = 20;
     ctx.fillStyle = "#566bb6";
     ctx.fillRect(0 + margen, 0 + margen, 100, 100);
 
