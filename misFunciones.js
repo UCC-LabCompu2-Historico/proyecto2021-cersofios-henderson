@@ -125,17 +125,17 @@ function CalculodeArea() {
 function DibujarTriangulo(Base, Altura){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    var base, altura;
-    var xmax = canvas.width;
-    var ymax = canvas.height;
+    var base, altura, hipotenusa;
     canvas.width = canvas.width;
     base=Base*0.1;
     altura=Altura*0.1;
+    hipotenusa=Math.sqrt(base*base+altura*altura);
     ctx.beginPath();
     ctx.moveTo(100,100);
     ctx.lineTo(150*base,100);
-    ctx.lineTo(150*base, 150*altura);
+    ctx.lineTo(150*base, 150*hipotenusa);
     ctx.closePath();
+    ctx.fillStyle = "#572f84";
     ctx.fill();
 }
 /**
@@ -147,11 +147,14 @@ function DibujarTriangulo(Base, Altura){
  */
 function DibujarRectangulo(Base, Altura){
     var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");;
-    var margen = 20;
-    ctx.fillStyle = "#999999";
-    ctx.fillRect(0 + margen, 0 + margen, 100, 250);
-
+    var ctx = canvas.getContext("2d")
+    var base, altura;
+    var margen=50;
+    base=Base*0.1;
+    altura=Altura*0.1;
+    canvas.width = canvas.width;
+    ctx.fillStyle = "#572f84";
+    ctx.fillRect(0 + margen, 0 + margen, 100*base, 100*altura);
 }
 /**
  * Función que permite dibujar un círculo según la longitud de su Radio
@@ -164,9 +167,12 @@ function DibujarCirculo(Radio){
     var ctx = canvas.getContext("2d");
     var xmax = canvas.width;
     var ymax = canvas.height;
-    ctx.arc(xmax / 2, ymax / 2, 20, 0, 2 * Math.PI);
+    var radio;
+    radio=Radio*0.1;
+    canvas.width = canvas.width;
+    ctx.arc(xmax / 2, ymax / 2, 20*radio, 0, 2 * Math.PI);
     ctx.stroke();
-    ctx.fillStyle = "#99338f";
+    ctx.fillStyle = "#87367e";
     ctx.fill();
 
 }
@@ -179,9 +185,12 @@ function DibujarCirculo(Radio){
 function DibujarCuadrado(Lado){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    var margen = 20;
-    ctx.fillStyle = "#566bb6";
-    ctx.fillRect(0 + margen, 0 + margen, 100, 100);
+    var margen = 50;
+    var lado;
+    lado=Lado*0.1;
+    canvas.width = canvas.width;
+    ctx.fillStyle = "#87367e";
+    ctx.fillRect(0 + margen, 0 + margen, 100*lado, 100*lado);
 
 }
 
