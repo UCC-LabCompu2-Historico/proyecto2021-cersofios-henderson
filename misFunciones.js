@@ -125,12 +125,16 @@ function CalculodeArea() {
 function DibujarTriangulo(Base, Altura){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    var variable;
-    variable=(Base*Altura)/10;
+    var base, altura;
+    var xmax = canvas.width;
+    var ymax = canvas.height;
+    canvas.width = canvas.width;
+    base=Base*0.1;
+    altura=Altura*0.1;
     ctx.beginPath();
-    ctx.moveTo(50*variable,50*variable);
-    ctx.lineTo(50*variable, 100*variable);
-    ctx.lineTo(150*variable, 100*variable);
+    ctx.moveTo(100,100);
+    ctx.lineTo(150*base,100);
+    ctx.lineTo(150*base, 150*altura);
     ctx.closePath();
     ctx.fill();
 }
