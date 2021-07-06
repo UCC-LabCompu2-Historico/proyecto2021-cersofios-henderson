@@ -194,4 +194,85 @@ function DibujarCuadrado(Lado){
 
 }
 
+function AnimarTriangulo(){
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = canvas.width;
+    var img=new Image();
+    img.src="imagenes/Triangulo.png";
+
+    img.onload=function ()
+    {
+        ctx.drawImage(img,x,100)
+    }
+    if(x>canvas.width)
+    {
+        x=0;
+    }
+    x+=dx;
+}
+
+function AnimarRectangulo(){
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = canvas.width;
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = canvas.width;
+    var img=new Image();
+    img.src="imagenes/rectangulo.png";
+
+    img.onload=function ()
+    {
+        ctx.drawImage(img,x,100)
+    }
+    if(x>canvas.width)
+    {
+        x=0;
+    }
+    x+=dx;
+}
+
+function AnimarCirculo(){
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = canvas.width;
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = canvas.width;
+    var img=new Image();
+    img.src="imagenes/circulo.png";
+
+    img.onload=function ()
+    {
+        ctx.drawImage(img,x,100)
+    }
+    if(x>canvas.width)
+    {
+        x=0;
+    }
+    x+=dx;
+}
+
+function AnimarCuadrado(){
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = canvas.width;
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = canvas.width;
+    var img=new Image();
+    img.src="imagenes/cuadrado2.png";
+
+    img.onload=function ()
+    {
+        ctx.drawImage(img,x,100)
+    }
+    if(x>canvas.width)
+    {
+        x=0;
+    }
+    x+=dx;
+}
+
 
