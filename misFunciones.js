@@ -66,6 +66,7 @@ function CalculodeArea() {
 
         document.getElementById("Resultado").value = (BaseT * AlturaT) / 2;
         DibujarTriangulo(BaseT, AlturaT);
+        AnimarTriangulo();
     } else if (document.getElementById("cuadrado").checked) {
         if (Lado.includes(",")) {
             Lado = Lado.replace(",", ".");
@@ -78,6 +79,7 @@ function CalculodeArea() {
         }
         document.getElementById("Resultado").value = Lado * Lado;
         DibujarCuadrado(Lado);
+        AnimarCuadrado();
     } else if (document.getElementById("circulo").checked) {
         if (Radio.includes(",")) {
             Radio = Radio.replace(",", ".");
@@ -90,6 +92,7 @@ function CalculodeArea() {
         }
         document.getElementById("Resultado").value = (Radio * Radio) * Math.PI;
         DibujarCirculo(Radio);
+        AnimarCirculo();
     } else if (document.getElementById("rectangulo").checked) {
 
         if (BaseR.includes(",")) {
@@ -112,6 +115,7 @@ function CalculodeArea() {
         }
         document.getElementById("Resultado").value = AlturaR * BaseR;
         DibujarRectangulo(BaseR, AlturaR);
+        AnimarRectangulo();
     }
 }
 /**
@@ -154,7 +158,12 @@ function DibujarRectangulo(Base, Altura){
     altura=Altura*0.1;
     canvas.width = canvas.width;
     ctx.fillStyle = "#572f84";
-    ctx.fillRect(0 + margen, 0 + margen, 100*base, 100*altura);
+    ctx.fillRect(Posicionx, 0 + margen, 100*base, 100*altura);
+    Posicionx=Posicionx+10;
+    if(Posicionx>canvas.width)
+    {
+        Posicionx=0;
+    }
 }
 /**
  * Función que permite dibujar un círculo según la longitud de su Radio
@@ -193,86 +202,44 @@ function DibujarCuadrado(Lado){
     ctx.fillRect(0 + margen, 0 + margen, 100*lado, 100*lado);
 
 }
-
+/**
+ * Función que permite animar un triángulo según la longitud de su Base y Altura
+ * @method AnimarTriangulo
+ * @param Base - La base ingresada por el usuario
+ * @param Altura - La altura ingresada por el usuario
+ * @return {canvas} dibujo de la figura geométrica
+ */
+var Posicionx=0;
 function AnimarTriangulo(){
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    canvas.width = canvas.width;
-    var img=new Image();
-    img.src="imagenes/Triangulo.png";
-
-    img.onload=function ()
-    {
-        ctx.drawImage(img,x,100)
-    }
-    if(x>canvas.width)
-    {
-        x=0;
-    }
-    x+=dx;
+    setInterval("DibujarTriangulo()",1000);
 }
-
+/**
+ * Función que permite animar un rectángulo según la longitud de su Base y Altura
+ * @method AnimarRectangulo
+ * @param Base - La base ingresada por el usuario
+ * @param Altura - La altura ingresada por el usuario
+ * @return {canvas} dibujo de la figura geométrica
+ */
 function AnimarRectangulo(){
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    canvas.width = canvas.width;
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    canvas.width = canvas.width;
-    var img=new Image();
-    img.src="imagenes/rectangulo.png";
-
-    img.onload=function ()
-    {
-        ctx.drawImage(img,x,100)
-    }
-    if(x>canvas.width)
-    {
-        x=0;
-    }
-    x+=dx;
+   setInterval("DibujarRectangulo()",1000);
 }
-
-function AnimarCirculo(){
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    canvas.width = canvas.width;
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    canvas.width = canvas.width;
-    var img=new Image();
-    img.src="imagenes/circulo.png";
-
-    img.onload=function ()
-    {
-        ctx.drawImage(img,x,100)
-    }
-    if(x>canvas.width)
-    {
-        x=0;
-    }
-    x+=dx;
+/**
+ * Función que permite animar un círculo según la longitud de su Radio
+ * @method AnimarCirculo
+ * @param Radio - El radio ingresado por el usuario
+ * @return {canvas} dibujo de la figura geométrica
+ */
+function AnimarCirculo() {
+    setInterval("DibujarCirculo()", 1000);
 }
-
+/**
+ * Función que permite animar un cuadrado según la longitud de su Lado
+ * @method AnimarCuadrado
+ * @param Lado - El lado ingresado por el usuario
+ * @return {canvas} dibujo de la figura geométrica
+ */
 function AnimarCuadrado(){
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    canvas.width = canvas.width;
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    canvas.width = canvas.width;
-    var img=new Image();
-    img.src="imagenes/cuadrado2.png";
-
-    img.onload=function ()
-    {
-        ctx.drawImage(img,x,100)
-    }
-    if(x>canvas.width)
-    {
-        x=0;
-    }
-    x+=dx;
+    setInterval("DibujarCuadrado()", 1000);
 }
 
 
