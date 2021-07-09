@@ -129,18 +129,20 @@ function CalculodeArea() {
 function DibujarTriangulo(Base, Altura){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    var base, altura, hipotenusa;
+    //var base, altura, hipotenusa;
     canvas.width = canvas.width;
-    base=Base*0.1;
-    altura=Altura*0.1;
-    hipotenusa=Math.sqrt(base*base+altura*altura);
+   //base=Base*0.1;
+    //altura=Altura*0.1;
+    //hipotenusa=Math.sqrt(base*base+altura*altura);
+    var anchoMax;
+    anchoMax=canvas.width;
     ctx.beginPath();
-    ctx.moveTo(100,100);
-    ctx.lineTo(150*base,100);
-    ctx.lineTo(150*base, 150*hipotenusa);
+    ctx.moveTo((anchoMax-Base)/2,1);
+    ctx.lineTo((anchoMax-Base)/2+Base/2,1+Altura);
+    ctx.lineTo((anchoMax-Base)/2+Base,1);
     ctx.closePath();
     ctx.fillStyle = "#572f84";
-    ctx.fill();
+    ctx.stroke();
 }
 /**
  * Función que permite dibujar un rectángulo según la longitud de su Base y Altura
@@ -149,6 +151,7 @@ function DibujarTriangulo(Base, Altura){
  * @param Altura - La altura ingresada por el usuario
  * @return {canvas} dibujo de la figura geométrica
  */
+var Posicionx=0;
 function DibujarRectangulo(Base, Altura){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d")
@@ -205,19 +208,14 @@ function DibujarCuadrado(Lado){
 /**
  * Función que permite animar un triángulo según la longitud de su Base y Altura
  * @method AnimarTriangulo
- * @param Base - La base ingresada por el usuario
- * @param Altura - La altura ingresada por el usuario
  * @return {canvas} dibujo de la figura geométrica
  */
-var Posicionx=0;
 function AnimarTriangulo(){
     setInterval("DibujarTriangulo()",1000);
 }
 /**
  * Función que permite animar un rectángulo según la longitud de su Base y Altura
  * @method AnimarRectangulo
- * @param Base - La base ingresada por el usuario
- * @param Altura - La altura ingresada por el usuario
  * @return {canvas} dibujo de la figura geométrica
  */
 function AnimarRectangulo(){
@@ -226,7 +224,6 @@ function AnimarRectangulo(){
 /**
  * Función que permite animar un círculo según la longitud de su Radio
  * @method AnimarCirculo
- * @param Radio - El radio ingresado por el usuario
  * @return {canvas} dibujo de la figura geométrica
  */
 function AnimarCirculo() {
@@ -235,7 +232,6 @@ function AnimarCirculo() {
 /**
  * Función que permite animar un cuadrado según la longitud de su Lado
  * @method AnimarCuadrado
- * @param Lado - El lado ingresado por el usuario
  * @return {canvas} dibujo de la figura geométrica
  */
 function AnimarCuadrado(){
