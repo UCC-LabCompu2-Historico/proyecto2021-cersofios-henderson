@@ -4,6 +4,7 @@
  * @param {string} valor - El valor de los radio button (Triángulo, Cuadrado, Círculo o Rectángulo)
  * @return
  */
+var Posicionx=0;
 
 function mostrar_ocultar(valor){
     if (valor == "Triangulo") {
@@ -63,10 +64,12 @@ function CalculodeArea() {
         if (isNaN(AlturaT)) {
             alert("Se ingreso un valor incorrecto en Altura del Triángulo ");
         }
+        if (BaseT>0 && AlturaT>0 && !isNaN(BaseT) && !isNaN(AlturaT)){
+            document.getElementById("Resultado").value = (BaseT * AlturaT) / 2;
+            DibujarTriangulo(BaseT, AlturaT);
+            //AnimarTriangulo();
+        }
 
-        document.getElementById("Resultado").value = (BaseT * AlturaT) / 2;
-        DibujarTriangulo(BaseT, AlturaT);
-        AnimarTriangulo();
     } else if (document.getElementById("cuadrado").checked) {
         if (Lado.includes(",")) {
             Lado = Lado.replace(",", ".");
@@ -114,8 +117,10 @@ function CalculodeArea() {
             alert("Se ingreso un valor incorrecto en la Altura del Rectángulo ");
         }
         document.getElementById("Resultado").value = AlturaR * BaseR;
-        DibujarRectangulo(BaseR, AlturaR);
+        DibujarRectangulo();
         AnimarRectangulo();
+        localStorage.setItem("BaseR", BaseR);
+        localStorage.setItem("AlturaR", AlturaR);
     }
 }
 /**
@@ -151,14 +156,14 @@ function DibujarTriangulo(Base, Altura){
  * @param Altura - La altura ingresada por el usuario
  * @return {canvas} dibujo de la figura geométrica
  */
-var Posicionx=0;
-function DibujarRectangulo(Base, Altura){
+
+function DibujarRectangulo(){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d")
     var base, altura;
     var margen=50;
-    base=Base*0.1;
-    altura=Altura*0.1;
+    base=localStorage.getItem("BaseR")*0.1;
+    altura=localStorage.getItem("AlturaR")*0.1;
     canvas.width = canvas.width;
     ctx.fillStyle = "#572f84";
     ctx.fillRect(Posicionx, 0 + margen, 100*base, 100*altura);
@@ -219,7 +224,7 @@ function AnimarTriangulo(){
  * @return {canvas} dibujo de la figura geométrica
  */
 function AnimarRectangulo(){
-   setInterval("DibujarRectangulo()",1000);
+   setInterval(DibujarRectangulo,1000);
 }
 /**
  * Función que permite animar un círculo según la longitud de su Radio
