@@ -142,9 +142,9 @@ function DibujarTriangulo(Base, Altura){
     var anchoMax;
     anchoMax=canvas.width;
     ctx.beginPath();
-    ctx.moveTo((anchoMax-Base)/2,1);
-    ctx.lineTo((anchoMax-Base)/2+Base/2,1+Altura);
-    ctx.lineTo((anchoMax-Base)/2+Base,1);
+    ctx.moveTo(100, 100);
+    ctx.lineTo(Base/2,Altura);
+    ctx.lineTo(Base,100);
     ctx.closePath();
     ctx.fillStyle = "#572f84";
     ctx.stroke();
