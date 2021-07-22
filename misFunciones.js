@@ -1,11 +1,10 @@
+var Posicionx=0;
 /**
  * Función que permite mostrar u ocultar div según la elección de los radio button
  * @method mostrar_ocultar
  * @param {string} valor - El valor de los radio button (Triángulo, Cuadrado, Círculo o Rectángulo)
  * @return
  */
-var Posicionx=0;
-
 function mostrar_ocultar(valor){
     if (valor == "Triangulo") {
         document.getElementById("area_triangulo").style.display = 'block';
@@ -66,8 +65,10 @@ function CalculodeArea() {
         }
         if (BaseT>0 && AlturaT>0 && !isNaN(BaseT) && !isNaN(AlturaT)){
             document.getElementById("Resultado").value = (BaseT * AlturaT) / 2;
-            DibujarTriangulo(BaseT, AlturaT);
-            //AnimarTriangulo();
+            DibujarTriangulo();
+            AnimarTriangulo();
+            localStorage.setItem("BaseT", BaseT);
+            localStorage.setItem("AlturaT", AlturaT);
         }
 
     } else if (document.getElementById("cuadrado").checked) {
@@ -130,24 +131,27 @@ function CalculodeArea() {
  * @param Altura - La altura ingresada por el usuario
  * @return {canvas} dibujo de la figura geométrica
  */
-
-function DibujarTriangulo(Base, Altura){
+Posicionx=0;
+function DibujarTriangulo(){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    //var base, altura, hipotenusa;
     canvas.width = canvas.width;
-   //base=Base*0.1;
-    //altura=Altura*0.1;
-    //hipotenusa=Math.sqrt(base*base+altura*altura);
     var anchoMax;
+    Base=localStorage.getItem("BaseT");
+    Altura=localStorage.getItem("AlturaT");
     anchoMax=canvas.width;
     ctx.beginPath();
-    ctx.moveTo(100, 100);
-    ctx.lineTo(Base/2,Altura);
-    ctx.lineTo(Base,100);
+    ctx.moveTo(100+Posicionx, 100);
+    ctx.lineTo(Base/2+Posicionx,Altura);
+    ctx.lineTo(Base+Posicionx,100);
     ctx.closePath();
-    ctx.fillStyle = "#572f84";
+    ctx.strokeStyle = "#572f84";
     ctx.stroke();
+    Posicionx=Posicionx+10;
+    if(Posicionx>canvas.width)
+    {
+        Posicionx=0;
+    }
 }
 /**
  * Función que permite dibujar un rectángulo según la longitud de su Base y Altura
@@ -216,7 +220,7 @@ function DibujarCuadrado(Lado){
  * @return {canvas} dibujo de la figura geométrica
  */
 function AnimarTriangulo(){
-    setInterval("DibujarTriangulo()",1000);
+    setInterval(DibujarTriangulo(),1000);
 }
 /**
  * Función que permite animar un rectángulo según la longitud de su Base y Altura
@@ -224,7 +228,7 @@ function AnimarTriangulo(){
  * @return {canvas} dibujo de la figura geométrica
  */
 function AnimarRectangulo(){
-   setInterval(DibujarRectangulo,1000);
+    setInterval(DibujarRectangulo,1000);
 }
 /**
  * Función que permite animar un círculo según la longitud de su Radio
@@ -242,5 +246,4 @@ function AnimarCirculo() {
 function AnimarCuadrado(){
     setInterval("DibujarCuadrado()", 1000);
 }
-
 
