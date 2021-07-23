@@ -82,8 +82,9 @@ function CalculodeArea() {
             alert("Se ingreso un valor incorrecto en el Lado del Cuadrado ");
         }
         document.getElementById("Resultado").value = Lado * Lado;
-        DibujarCuadrado(Lado);
+        DibujarCuadrado();
         AnimarCuadrado();
+        localStorage.setItem("Lado", Lado);
     } else if (document.getElementById("circulo").checked) {
         if (Radio.includes(",")) {
             Radio = Radio.replace(",", ".");
@@ -95,8 +96,9 @@ function CalculodeArea() {
             alert("Se ingreso un valor incorrecto en el Radio del Círculo ");
         }
         document.getElementById("Resultado").value = (Radio * Radio) * Math.PI;
-        DibujarCirculo(Radio);
+        DibujarCirculo();
         AnimarCirculo();
+        localStorage.setItem("Radio", Radio);
     } else if (document.getElementById("rectangulo").checked) {
 
         if (BaseR.includes(",")) {
@@ -133,6 +135,7 @@ function CalculodeArea() {
  */
 Posicionx=0;
 function DibujarTriangulo(){
+    var Base, Altura;
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
     canvas.width = canvas.width;
@@ -183,18 +186,24 @@ function DibujarRectangulo(){
  * @param Radio - El radio ingresado por el usuario
  * @return {canvas} dibujo de la figura geométrica
  */
-function DibujarCirculo(Radio){
+function DibujarCirculo(){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    var xmax = canvas.width;
+    //var xmax = canvas.width;
     var ymax = canvas.height;
     var radio;
-    radio=Radio*0.1;
+    radio=localStorage.getItem("Radio")*0.1;
     canvas.width = canvas.width;
-    ctx.arc(xmax / 2, ymax / 2, 20*radio, 0, 2 * Math.PI);
-    ctx.stroke();
+    ctx.arc(Posicionx, ymax / 2, 20*radio, 0, 2 * Math.PI);
     ctx.fillStyle = "#87367e";
     ctx.fill();
+    ctx.stroke();
+    Posicionx=Posicionx+10;
+    if(Posicionx>canvas.width)
+    {
+        Posicionx=0;
+    }
+    ctx.stroke();
 
 }
 /**
@@ -208,10 +217,15 @@ function DibujarCuadrado(Lado){
     var ctx = canvas.getContext("2d");
     var margen = 50;
     var lado;
-    lado=Lado*0.1;
+    lado=localStorage.getItem("Lado")*0.1;
     canvas.width = canvas.width;
     ctx.fillStyle = "#87367e";
-    ctx.fillRect(0 + margen, 0 + margen, 100*lado, 100*lado);
+    ctx.fillRect(Posicionx, 0 + margen, 100*lado, 100*lado);
+    Posicionx=Posicionx+10;
+    if(Posicionx>canvas.width)
+    {
+        Posicionx=0;
+    }
 
 }
 /**
@@ -236,7 +250,7 @@ function AnimarRectangulo(){
  * @return {canvas} dibujo de la figura geométrica
  */
 function AnimarCirculo() {
-    setInterval("DibujarCirculo()", 1000);
+    setInterval(DibujarCirculo, 1000);
 }
 /**
  * Función que permite animar un cuadrado según la longitud de su Lado
@@ -244,6 +258,6 @@ function AnimarCirculo() {
  * @return {canvas} dibujo de la figura geométrica
  */
 function AnimarCuadrado(){
-    setInterval("DibujarCuadrado()", 1000);
+    setInterval(DibujarCuadrado, 1000);
 }
 
